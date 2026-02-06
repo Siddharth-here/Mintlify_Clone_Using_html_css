@@ -1,0 +1,552 @@
+:root {
+    --glass-white: rgba(255, 255, 255, 0.03);
+    --nav-glass: rgba(8, 9, 11, 0.8);
+    --mint-green: #10b981;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #08090B; /* Match Mintlify dark theme */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Background Logic */
+.bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.bg-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top, transparent, #08090B 80%);
+}
+
+/* Navbar Fixes */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--nav-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: white; }
+
+
+/* Button Container Styling */
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Base Button Reset */
+button {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 15px; /* Mintlify uses slightly rounded corners, not full pills */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+/* Secondary: Contact Sales (Transparent/Ghost) */
+.btn-secondary {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-secondary:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid gray;
+}
+
+/* Primary: Start for free (High Contrast) */
+.btn-primary {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+}
+
+.btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px); /* Subtle lift effect */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    /* Reducing max-width brings everything toward the center */
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 24px;
+    display: block;
+    background-color: white;
+    padding: 6px;
+    border-radius: 12px;
+    /* REMOVED: margin-left: 60px; */
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 0.75rem;
+    /* REMOVED: margin-right: 60px; */
+}
+
+/* Optional: Adjust gap between links to fine-tune the "closeness" */
+.nav-links {
+    display: flex;
+    gap: 1.5rem; /* Reduced from 2rem */
+}
+
+/* Hero Section Refinement */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 160px; /* Space for fixed nav */
+    text-align: center;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.new-tag {
+    background: var(--mint-green);
+    color: black;
+    font-weight: bold;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin: 0 0 1.5rem 0;
+}
+
+.cta-group {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    border-radius: 50px;
+    display: flex;
+    width: 400px;
+    margin-bottom: 4rem;
+}
+
+.glass-input {
+    background: transparent;
+    border: none;
+    padding: 0 20px;
+    color: white;
+    flex: 1;
+    outline: none;
+}
+
+.btn-start {
+    background: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.nav-buttons{
+    
+}
+
+/* Image 3D Effect */
+.hero-image-wrapper {
+    /* perspective: 1000px; */
+    width: 90%;
+    max-width: 1100px;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    border-radius: 15px;
+    transform: rotateX(10deg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.full-width-feature {
+    width: 100%;
+    overflow: hidden; /* Prevents any accidental horizontal scroll */
+    background-color: #08090B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.full-width-feature img {
+    width: 100%;
+    height: auto;
+    display: block; /* Removes the small gap at the bottom of the image */
+    
+    /* Optional: If you want a slight padding like Mintlify, add this: */
+    /* padding: 0 40px; box-sizing: border-box; */
+
+    /* Optional: Maintain that subtle border to separate it from the bg */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.centered-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+    text-align: center;   /* Centers the text lines */
+    padding: 100px 20px;
+    background-color: #08090B;
+    color: white;
+}
+
+.centered-feature h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.centered-feature p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 4rem; /* Space before the images start */
+}
+
+/* Image Handling */
+.image-group {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px; /* Space between the two images */
+}
+
+.image-group img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+.enterprise-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    color: white;
+    background-color: black;
+}
+
+/* Header Row Layout */
+.enterprise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Aligns button to the bottom of the text block */
+    margin-bottom: 80px;
+}
+
+.enterprise-header h6 {
+    color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.enterprise-header h2 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.enterprise-header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+.btn-enterprise {
+    background: white;
+    color: black;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+/* Feature Grid */
+.enterprise-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+
+.feature-item h3 {
+    font-size: 1.25rem;
+    margin: 20px 0 12px;
+}
+
+.feature-item p {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.card-img {
+    display: block;     
+    margin: 20px auto;   
+    width: 80%;         
+    height: auto;
+    position: static;    
+    mask-image: none;    
+}
+
+/* Update the card container to stack items */
+.customer-card {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.full-bleed-section {
+    width: 100%;
+    /* height: 600px; */ /* Optional: Set a specific height if needed */
+    overflow: hidden;
+    display: flex; /* Helps eliminate white space gaps at the bottom */
+}
+
+.full-bleed-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Magic property: crops the image to fill the area without stretching */
+    display: block;
+}
+
+.final-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically if height is set */
+    text-align: center;      /* Centers the text lines */
+    padding: 120px 20px;
+    background-color: #08090B;
+    color: white;
+}
+
+.final-cta h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.final-cta p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+/* Button Group Layout */
+.cta-buttons {
+    display: flex;
+    gap: 16px; /* Space between buttons */
+}
+
+.final-cta button {
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+/* First Button: White Background */
+.btn-white {
+    background-color: white;
+    color: black;
+}
+
+.btn-white:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+/* Second Button: Outline Style */
+.btn-outline {
+    background-color: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: white !important;
+}
+
+.main-footer {
+    background-color: #08090B;
+    padding: 80px 20px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+.footer-col h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.footer-col a {
+    display: block;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5); /* Faded link color */
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: white;
+}
+
+/* Bottom Bar Styling */
+.footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16, 185, 129, 0.05);
+    padding: 6px 12px;
+    border-radius: 50px;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981; /* Mintlify Green */
+    border-radius: 50%;
+    /* Subtle pulse animation */
+    box-shadow: 0 0 8px #10b981;
+}
+
+.status-box p {
+    font-size: 0.8rem;
+    color: #10b981;
+    margin: 0;
+}
+
+.legal-info {
+    text-align: right;
+}
+
+.legal-info p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+}
+
+.security-tag {
+    font-size: 0.75rem !important;
+    margin-top: 4px !important;
+}
+
